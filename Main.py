@@ -9,7 +9,9 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 
-def testOpen(fileName):
+def openSheet(fileName):
+    """Opens the passed Google Sheet and returns a list of dictionaries of the contents
+    """
     # use creds to create a client to interact with the Google Drive API
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
@@ -22,6 +24,30 @@ def testOpen(fileName):
 
     # Extract and print all of the values
     list_of_hashes = testSheet.get_all_records()
-    print(list_of_hashes)
+    return(list_of_hashes)
 
-testOpen("test_data")
+testList = openSheet("test_data")
+print(testList)
+print(testList[0])
+print(testList[0]['Restaurant Name'])
+
+num = 0
+name = "RJ"
+team = ["RJ", "DN", "DK", "PS"]
+bigTeam = ["AA", "ACD", "AL", "AR", "CP", "CS", "DK", "DN", "JJ", "JM", "KB", "MB", "NB", "PS", "RJ", "SC", "SM"]
+
+for person in bigTeam:
+    num = 0
+    while num < len(testList):
+        if testList[num][person] == str_emojiYes:
+            print(person, " likes ", testList[num]['Restaurant Name'])
+        num = num + 1
+for person in bigTeam:
+    num = 0
+    while num < len(testList):
+        if testList[num][person] == str_emojiNo:
+            print(person, " dislikes ", testList[num]['Restaurant Name'])
+        num = num + 1
+
+print("\n\nGo to fucking bed")
+
