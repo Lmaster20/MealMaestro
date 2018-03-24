@@ -5,8 +5,6 @@ from django.views.generic import TemplateView
 class HomeView(TemplateView):
     template_name = 'index.html'
 
-from Main import testOpen
-
 def submit(request):
     info=request.POST['info']
     # do something with info
