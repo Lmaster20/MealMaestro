@@ -20,6 +20,6 @@ from catalog.views import HomeView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
-    url(r'whatever^$', 'core.views.my_view', name='my_view_name'),
+    url(r'^submit', views.submit),
 
 ]

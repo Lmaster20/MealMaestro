@@ -23,3 +23,5 @@ def testOpen(fileName):
     # Extract and print all of the values
     list_of_hashes = testSheet.get_all_records()
     print(list_of_hashes)
+
+testOpen("test_data")

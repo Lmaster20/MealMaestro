@@ -7,6 +7,7 @@ class HomeView(TemplateView):
 
 from Main import testOpen
 
-def buttonTest(request):
-    if request.method == 'POST':
-        testOpen("test_data")
+def submit(request):
+    info=request.POST['info']
+    # do something with info
+    print("yay")
