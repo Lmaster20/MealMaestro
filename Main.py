@@ -1,2 +1,7 @@
 # Meal Maestro V1.0
-# Simplifies meal selection in groups
+# Simplifies group meal selection
+
+str_emojiBirb = "🐥"
+str_emojiYes = "👍"
+str_emojiNo = "👎"
+
